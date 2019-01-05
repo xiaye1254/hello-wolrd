@@ -1,0 +1,27 @@
+使用简单的全连接神经网络
+
+基本参数概念+完整编程例子+tensorboard+输出图片
+
+尝试拟合一条线：y=sinx
+同时拟合两条线：y=sinx & y=sinx+4,加1个维度(1,pi,0),(2,pi,0)
+
+
+1.数据生成，x为[0,8]随机的随机数，y为sinx
+
+2.训练1 hiden layer with 4 neurons 的全连接nn模型，
+使用批训练模式，激活函数用relu，加正则项，损失函数用交叉熵，使用梯度优化，用dropout，
+学习率，学习衰减率，正则率。
+
+每隔一定轮数保存模型，tensorboard使用画图。
+
+3.在同一张图中画出y=sinx函数，和拟合图。
+
+
+交叉熵的计算
+tf.nn.softmax_cross_entropy_with_logits()
+tf.nn.sparse_softmax_cross_entropy_with_logits（）
+tf.reduce_mean()
+tf.variable_scope()   取里面的变量
+tf.nn.softplus
+
+模型持久化，重开一个.py，读取ckpt中的参数变量
